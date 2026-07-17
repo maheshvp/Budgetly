@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Budgetly.Api/Budgetly.Api.csproj" />
+    <Project Path="src/Budgetly.Application/Budgetly.Application.csproj" />
+    <Project Path="src/Budgetly.Domain/Budgetly.Domain.csproj" />
+    <Project Path="src/Budgetly.Infrastructure/Budgetly.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Budgetly.Api.IntegrationTests/Budgetly.Api.IntegrationTests.csproj" />
+    <Project Path="tests/Budgetly.Application.Tests/Budgetly.Application.Tests.csproj" />
+    <Project Path="tests/Budgetly.Domain.Tests/Budgetly.Domain.Tests.csproj" />
+  </Folder>
+</Solution>

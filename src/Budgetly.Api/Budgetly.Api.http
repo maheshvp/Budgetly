@@ -1,0 +1,78 @@
+@Budgetly.Api_HostAddress = http://localhost:5264
+
+### Create an account
+# @name createAccount
+POST {{Budgetly.Api_HostAddress}}/api/accounts
+Content-Type: application/json
+
+{
+  "name": "Checking",
+  "currency": "USD"
+}
+
+###
+
+@accountId = {{createAccount.response.body.id}}
+
+### List accounts
+GET {{Budgetly.Api_HostAddress}}/api/accounts
+Accept: application/json
+
+###
+
+### Get account by id
+GET {{Budgetly.Api_HostAddress}}/api/accounts/{{accountId}}
+Accept: application/json
+
+###
+
+### Create a category
+# @name createCategory
+POST {{Budgetly.Api_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "name": "Freelance",
+  "type": 1
+}
+
+###
+
+@categoryId = {{createCategory.response.body.id}}
+
+### List categories
+GET {{Budgetly.Api_HostAddress}}/api/categories
+Accept: application/json
+
+###
+
+### Create a transaction
+# @name createTransaction
+POST {{Budgetly.Api_HostAddress}}/api/transactions
+Content-Type: application/json
+
+{
+  "accountId": "{{accountId}}",
+  "categoryId": "{{categoryId}}",
+  "amount": 100,
+  "currency": "USD",
+  "type": 1,
+  "date": "2026-07-05",
+  "note": "Sample income"
+}
+
+###
+
+@transactionId = {{createTransaction.response.body.id}}
+
+### List transactions (optionally filter by accountId, from, to)
+GET {{Budgetly.Api_HostAddress}}/api/transactions?accountId={{accountId}}
+Accept: application/json
+
+###
+
+### Get transaction by id
+GET {{Budgetly.Api_HostAddress}}/api/transactions/{{transactionId}}
+Accept: application/json
+
+###
