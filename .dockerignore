@@ -1,0 +1,15 @@
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+**/*.user
+
+.git/
+.gitignore
+.dockerignore
+*.md
+
+frontend/
+node_modules/
+
+tests/

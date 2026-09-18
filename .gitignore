@@ -61,6 +61,7 @@ Thumbs.db
 # Secrets (never commit real connection strings/secrets)
 *.pfx
 secrets.json
+.env
 
 # Docs
 docs/
